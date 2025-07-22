@@ -37,51 +37,29 @@ src
   - Each product belongs to one category
 ## 📦 API Endpoints
 
-### ✅ Category Endpoints
+### 📦 Product Endpoints
 
-| Method | Endpoint                  | Description                  |
-|--------|---------------------------|------------------------------|
-| POST   | `/category/`              | Create a new category        |
-| GET    | `/category/`              | Get all categories           |
-| GET    | `/category/{name}`        | Get category by name         |
+| Method | Endpoint                         | Description                     |
+|--------|----------------------------------|---------------------------------|
+| POST   | `/product/`                      | Create a new product            |
+| GET    | `/product/`                      | Get all products                |
+| GET    | `/product/{id}`                  | Get product by ID               |
+| GET    | `/product/category/{categoryId}` | Get all products by category ID |
+| DELETE | `/product/{id}`                  | Delete product by ID            |
 
-#### Sample Request (POST /category/)
+---
+
+### 🧪 Sample Request (POST `/product/`)
+
 ```json
-{
-  "name": "Electronics"
-}
-Sample Response
-{
-  "id": 1,
-  "name": "Electronics"
-}
-📦 Product Endpoints
-Method	Endpoint	Description
-POST	/product/	Create a new product
-GET	/product/	Get all products
-GET	/product/{id}	Get product by ID
-GET	/product/category/{categoryId}	Get all products by category ID
-DELETE	/product/{id}	Delete product by ID
-
-Sample Request (POST /product/)
-json
-Copy
-Edit
 {
   "name": "Laptop",
   "price": 45000,
   "categoryId": 1
 }
-
-🧪 Testing with Postman
-Open Postman
-
-Use method like POST, GET, DELETE based on endpoint
-
 ⚙️ application.properties
 properties
-Copy
-Edit
+
 spring.datasource.url=jdbc:h2:mem:testdb
 spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=sa
@@ -89,13 +67,8 @@ spring.datasource.password=
 spring.h2.console.enabled=true
 spring.jpa.show-sql=true
 spring.jpa.hibernate.ddl-auto=update
-📌 Notes
-ModelMapper is used to map between Entity and DTO
-
-Java 8 Streams are NOT used in services (for simple logic)
 
 🚀 Run the Application
-
 mvn spring-boot:run
-Visit:
-Swagger (if integrated): http://localhost:8080/swagger-ui/
+Visit Swagger: http://localhost:8080/swagger-ui/
+
