@@ -37,6 +37,14 @@ src
   - Each product belongs to one category
 ## 📦 API Endpoints
 
+### ✅ Category Endpoints
+
+| Method | Endpoint                  | Description                  |
+|--------|---------------------------|------------------------------|
+| POST   | `/category/`              | Create a new category        |
+| GET    | `/category/`              | Get all categories           |
+| GET    | `/category/{name}`        | Get category by name         |
+
 ### 📦 Product Endpoints
 
 | Method | Endpoint                         | Description                     |
